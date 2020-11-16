@@ -1,0 +1,15 @@
+Pseudocode Garten:
+
+1)
+
+Jede Woche 15L (Kein Wetterdienst) -> Keine Internetverbindung und kein Server nötig
+
+2)
+
+Zusammenrechnen des Wassers aller Tage in der Woche die mehr als 2.5 mm Niederschlag hatten + 18L Wasser pro Rasensprenkler-einstellung
+
+Beregnung jeweils um 5-6 Uhr morgens -> weniger Verdunstung
+
+Außerdem manuelle Steuerung sowie jede Woche und jeden Monat einen Graphen über Telegram
+
+(Nicht am Stück sondern vllt. über 2 Wochen verteilt)
