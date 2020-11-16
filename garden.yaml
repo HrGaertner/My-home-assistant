@@ -1,0 +1,57 @@
+esphome:
+  name: garden
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: "SSID"
+  password: "password"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Garden Fallback Hotspot"
+    password: "password"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+time:
+  - platform: sntp
+    id: sntp_time
+    on_time:
+      - seconds: 0
+        minutes: 40
+        hours: 7
+        then:
+          - switch.toggle: water_left
+
+      - seconds: 0
+        minutes: 0
+        hours: 8
+        then:
+          - switch.toggle: water_left
+          - switch.toggle: water_right
+
+      - seconds: 0
+        minutes: 20
+        hours: 8
+        then:
+          - switch.toggle: water_right
+
+switch:
+  - platform: gpio
+    pin: D1
+    id: water_right
+    name: "Garden watering Right"
+
+  - platform: gpio
+    pin: D2
+    id: water_left
+    name: "Garden watering Left"

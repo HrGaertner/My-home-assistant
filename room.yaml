@@ -1,0 +1,64 @@
+esphome:
+  name: my_room
+  platform: ESP8266
+  board: nodemcuv2
+
+wifi:
+  ssid: "SSID"
+  password: "password"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Light Stripe Fallback Hotspot"
+    password: "password"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+# Example configuration entry
+light:
+  - platform: rgb
+    name: "RGB stripe"
+    red: output_component1
+    green: output_component2
+    blue: output_component3
+
+  - platform: binary
+    name: "Status Light"
+    output: output_component0
+
+# Example output entry
+output:
+  - platform: esp8266_pwm
+    id: output_component1
+    pin: D1
+
+  - platform: esp8266_pwm
+    id: output_component2
+    pin: D2
+
+  - platform: esp8266_pwm
+    id: output_component0
+    inverted: True
+    pin: D0
+
+  - platform: esp8266_pwm
+    id: output_component3
+    pin: D3
+
+sensor:
+  - platform: dht
+    pin: D4
+    model: DHT11
+    temperature:
+      name: "Temperature"
+    humidity:
+      name: "Humidity"
+    update_interval: 60s
