@@ -1,3 +1,10 @@
+#Installation
+I used a supported docker container (community support) just follow [this tutorial](https://www.smarthomebeginner.com/install-hass-io-on-docker-linux/)
+
+Here the home assistant Installation of [daniele-athome](https://github.com/daniele-athome) which is much more impressive than mine
+
+Further the awesome home assistant [list](https://www.awesome-ha.com/#official-add-ons)
+
 # My-home-assistant
 Configuration and Introduction to my own devices in my home assistant installation
 
@@ -23,3 +30,4 @@ It also configures the status light on the Esp.
 It expects to have a DHT11 on D4 (and GND, 3V)
 
 ### [Presence Detection](https://www.home-assistant.io/integrations/ubus/)
+I use this with my open wrt router
